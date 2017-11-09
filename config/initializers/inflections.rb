@@ -14,3 +14,23 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+
+   inflect.irregular 'malla', 'mallas'
+   inflect.irregular 'producto', 'productos'
+   inflect.irregular 'tipo_de_unidad', 'tipo_de_unidades'
+   inflect.irregular 'cantidad', 'cantidades'
+   inflect.irregular 'num_malla', 'num_mallas'
+   inflect.irregular 'tintas', 'tintas'
+   inflect.irregular 'formula_tinta', 'formula_tintas'
+   inflect.irregular 'tinta_base', 'tintas_base'
+   inflect.irregular 'descripcion', 'descripciones'
+   inflect.irregular 'linea_uv', 'lineas_uv'
+   inflect.irregular 'caracteristica', 'caracteristicas'
+   inflect.irregular 'descripcion', 'descripciones'
+   inflect.irregular 'pantone', 'pantones'
+   inflect.irregular 'descripcion', 'descripciones'
+   inflect.irregular 'mezcla_total', 'mezclas_totales'
+
+end
