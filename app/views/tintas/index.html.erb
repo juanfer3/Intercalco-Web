@@ -21,10 +21,10 @@
     <% @tintas.each do |tinta| %>
       <tr>
         <td><%= tinta.cod %></td>
-        <td><%= tinta.linea_uv %></td>
+        <td><%= tinta.linea_uv.tipo_de_linea %></td>
         <td><%= tinta.pantone %></td>
-        <td><%= tinta.malla %></td>
-        <td><%= tinta.producto %></td>
+        <td><%= tinta.malla.num_malla %></td>
+        <td><%= tinta.producto.caracteristica%></td>
         <td><%= tinta.tipo_de_unidad %></td>
         <td><%= tinta.cantida %></td>
         <td><%= tinta.mezcla_total %></td>
@@ -38,9 +38,5 @@
 
 <br>
 
-<div class="fixed-action-btn horizontal">
-    <a href="tintas/new"  class="btn-floating btn-large red">
-      <i class="large material-icons">mode_edit</i>
-    </a>
-</div>
-<%= link_to 'New Tinta', new_tinta_path %>
+
+<!%= link_to 'New Tinta', new_tinta_path %>

@@ -16,9 +16,9 @@
       <tr>
         <td><%= linea_uv.tipo_de_linea %></td>
         <td><%= linea_uv.caracteristica %></td>
-        <td><%= link_to 'Show', linea_uv %></td>
-        <td><%= link_to 'Edit', edit_linea_uv_path(linea_uv) %></td>
-        <td><%= link_to 'Destroy', linea_uv, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button class="waves-effect waves-light btn boton_ver"><%= link_to 'Show', linea_uv ,class:'boton '%></button></td>
+        <td><button class="waves-effect waves-light btn boton_editar" ><%= link_to 'Edit', edit_linea_uv_path(linea_uv) ,class:'boton '%></button></td>
+        <td><button class="waves-effect waves-light btn boton_eliminar"><%= link_to 'Destroy', linea_uv, method: :delete, data: { confirm: 'Are you sure?' } ,class:'boton '%></button></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +31,4 @@
       <i class="large material-icons">mode_edit</i>
     </a>
 </div>
-<%= link_to 'New Linea Uv', new_linea_uv_path %>
+<!%= link_to 'New Linea Uv', new_linea_uv_path %>

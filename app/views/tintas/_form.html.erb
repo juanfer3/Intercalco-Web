@@ -39,17 +39,32 @@
   <div class="field">
     <%= f.input :cantida, id: :tinta_cantida %>
   </div>
-  <%f.simple_fields_for :formula_tintas do |formulas_f|%>
+  <!--%f.simple_fields_for :formula_tintas do |formulas_f|%>
     <div class="field">
-      <%= formulas_f.text_field :descripcion %>
+      <!%= formulas_f.text_field :descripcion %>
     </div>
     
-  <%end%>
+  <!%end%-->
+  
+  
   <!--div class="field"-->
     <!--%= form.label :mezcla_total %-->
     <!--%= form.text_field :mezcla_total, id: :tinta_mezcla_total %-->
   <!--/div-->
-
+ <%=f.simple_fields_for :formula_tintas do |formu|%>
+   <div>
+     <h2>Fomulario para Formulas</h2>
+     <%=formu.input :tinta_id%>
+     <label> Descipcion</label>
+     <%=formu.text_area :descripcion%>
+     <%=formu.input :tinta_base%>
+     <%=formu.input :cantidad%>
+   </div>
+   
+ <%end%>
+ <div>
+  
+ </div>
   <div class="actions">
     
     <%= f.submit %>

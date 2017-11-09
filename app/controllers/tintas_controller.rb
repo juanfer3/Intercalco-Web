@@ -5,6 +5,7 @@ class TintasController < ApplicationController
   # GET /tintas.json
   def index
     @tintas = Tinta.all
+    @productos = Producto.all
   end
 
   # GET /tintas/1

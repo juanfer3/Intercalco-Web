@@ -16,13 +16,13 @@
   <tbody>
     <% @formula_tintas.each do |formula_tinta| %>
       <tr>
-        <td><%= formula_tinta.tinta %></td>
+        <td><%= formula_tinta.tinta.pantone %></td>
         <td><%= formula_tinta.tinta_base %></td>
         <td><%= formula_tinta.descripcion %></td>
         <td><%= formula_tinta.cantidad %></td>
-        <td><%= link_to 'Show', formula_tinta %></td>
-        <td><%= link_to 'Edit', edit_formula_tinta_path(formula_tinta) %></td>
-        <td><%= link_to 'Destroy', formula_tinta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button class="waves-effect waves-light btn boton_ver"><i class="large material-icons"></i><%= link_to 'Show', formula_tinta,class:'boton ' %></button></td>
+        <td><button class="waves-effect waves-light btn boton_editar" ><%= link_to 'Edit', edit_formula_tinta_path(formula_tinta) ,class:'boton '%></button></td>
+        <td><button class="waves-effect waves-light btn boton_eliminar"><%= link_to 'Destroy', formula_tinta, method: :delete, data: { confirm: 'Are you sure?' } ,class:'boton '%></button></td>
       </tr>
     <% end %>
   </tbody>
@@ -35,4 +35,4 @@
         
 <br>
 
-<%= link_to 'New Formula Tinta', new_formula_tinta_path %>
+<!%= link_to 'New Formula Tinta', new_formula_tinta_path %>

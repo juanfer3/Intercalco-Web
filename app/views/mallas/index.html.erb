@@ -16,9 +16,9 @@
       <tr>
         <td><%= malla.num_malla %></td>
         <td><%= malla.caracteristica %></td>
-        <td><%= link_to 'Show', malla %></td>
-        <td><%= link_to 'Edit', edit_malla_path(malla) %></td>
-        <td><%= link_to 'Destroy', malla, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button class="waves-effect waves-light btn boton_ver"><%= link_to 'Show', malla ,class:'boton '%></button></td>
+        <td><button class="waves-effect waves-light btn boton_editar" ><%= link_to 'Edit', edit_malla_path(malla) ,class:'boton '%></button></td>
+        <td><button class="waves-effect waves-light btn boton_eliminar"><%= link_to 'Destroy', malla, method: :delete, data: { confirm: 'Are you sure?' } ,class:'boton '%></button></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Malla', new_malla_path %>
+<!%= link_to 'New Malla', new_malla_path %>
