@@ -22,7 +22,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
    inflect.irregular 'tipo_de_unidad', 'tipo_de_unidades'
    inflect.irregular 'cantidad', 'cantidades'
    inflect.irregular 'num_malla', 'num_mallas'
-   inflect.irregular 'tintas', 'tintas'
+   inflect.irregular 'tinta', 'tintas'
    inflect.irregular 'formula_tinta', 'formula_tintas'
    inflect.irregular 'tinta_base', 'tintas_base'
    inflect.irregular 'descripcion', 'descripciones'

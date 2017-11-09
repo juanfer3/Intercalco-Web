@@ -1,0 +1,57 @@
+<%= simple_nested_form_for @tinta do |f| %>
+  <% if tinta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tinta.errors.count, "error") %> prohibited this tinta from being saved:</h2>
+
+      <ul>
+      <% tinta.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+   
+    <%= f.input :cod, id: :tinta_cod %>
+  </div>
+
+  <div class="field">
+    <%= f.association :linea_uv, include_blank: 'Seleccione la Linea del color', wrapper_html: { class: 'm6 s12' }%>
+  </div>
+  
+  <div class="field">
+    <%= f.input :pantone, id: :tinta_pantone %>
+  </div>
+  <!--%f.simple_fields_for :malla do |malla_f|%-->
+  <div class="field">
+   <%= f.association :malla, include_blank: 'Mallas',  wrapper_html: { class: 'm6 s12' } %>
+  </div>
+  <!--%end%-->
+  <div class="field">
+    <%= f.association :producto, include_blank: 'Producto',  wrapper_html: { class: 'm6 s12' } %>
+  </div>
+
+  <div class="field">
+    <%= f.input :tipo_de_unidad, id: :tinta_tipo_de_unidad %>
+  </div>
+
+  <div class="field">
+    <%= f.input :cantida, id: :tinta_cantida %>
+  </div>
+  <%f.simple_fields_for :formula_tintas do |formulas_f|%>
+    <div class="field">
+      <%= formulas_f.text_field :descripcion %>
+    </div>
+    
+  <%end%>
+  <!--div class="field"-->
+    <!--%= form.label :mezcla_total %-->
+    <!--%= form.text_field :mezcla_total, id: :tinta_mezcla_total %-->
+  <!--/div-->
+
+  <div class="actions">
+    
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lineas Uv</h1>
+
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>Tipo de linea</th>
+      <th>Caracteristica</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lineas_uv.each do |linea_uv| %>
+      <tr>
+        <td><%= linea_uv.tipo_de_linea %></td>
+        <td><%= linea_uv.caracteristica %></td>
+        <td><%= link_to 'Show', linea_uv %></td>
+        <td><%= link_to 'Edit', edit_linea_uv_path(linea_uv) %></td>
+        <td><%= link_to 'Destroy', linea_uv, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+ <a class="btn" onclick="Materialize.toast('I am a toast', 4000)">Toast!</a>
+ <div class="fixed-action-btn horizontal">
+    <a href="lineas_uv/new"  class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+</div>
+<%= link_to 'New Linea Uv', new_linea_uv_path %>

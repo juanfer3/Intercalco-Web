@@ -14,5 +14,15 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require materialize
+//= require materialize-form
+//= require materialize-sprockets
 //= require turbolinks
 //= require_tree .
+$(document).on('nested:fieldAdded', function(event){
+  window.materializeForm.init()
+})
+
+$(document).on('turbolinks:load', function() {
+  window.materializeForm.init()
+})
+Materialize.toast('I am a toast!', 4000) // 4000 is the duration of the toast

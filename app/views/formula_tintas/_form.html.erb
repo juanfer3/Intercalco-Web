@@ -1,0 +1,37 @@
+<%= form_with(model: formula_tinta, local: true) do |form| %>
+  <% if formula_tinta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(formula_tinta.errors.count, "error") %> prohibited this formula_tinta from being saved:</h2>
+
+      <ul>
+      <% formula_tinta.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tinta_id %>
+    <%= form.text_field :tinta_id, id: :formula_tinta_tinta_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tinta_base %>
+    <%= form.number_field :tinta_base, id: :formula_tinta_tinta_base %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion, id: :formula_tinta_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cantidad %>
+    <%= form.text_field :cantidad, id: :formula_tinta_cantidad %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

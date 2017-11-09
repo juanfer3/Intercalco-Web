@@ -1,0 +1,28 @@
+<%= simple_form_for @linea_uv do |f| %>
+  <% if linea_uv.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(linea_uv.errors.count, "error") %> prohibited this linea_uv from being saved:</h2>
+
+      <ul>
+      <% linea_uv.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <%= f.input :tipo_de_linea, wrapper_html: { class: ' col m1 s1 l1' }%>
+  
+  </div>
+
+  <div class="field">
+    
+    <%= f.input :caracteristica, id: :linea_uv_caracteristica, wrapper_html: { class: 'col m1 s1 l1' } %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

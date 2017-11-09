@@ -61,3 +61,11 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 # Icons Materialize
 gem 'material_icons'
+
+#Simple_Form Materialize
+gem 'simple_form'
+gem 'nested_form'
+gem 'materialize-form'
+
+# ToadsTr
+gem 'toastr-rails'

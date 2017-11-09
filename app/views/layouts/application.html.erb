@@ -6,9 +6,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
-    <%= yield %>
+    <!--/Navbar-->
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%=link_to "Lineas De Tintas", lineas_uv_path%></li>
+        <li><%=link_to "Mallas", mallas_path%></li>
+        <li><%=link_to "Tintas", tintas_path%></li>
+        <li><%=link_to "Productos", productos_path%></li>
+        <li><%=link_to "Formula Tintas", formula_tintas_path%></li>
+      </ul>
+    </div>
+  </nav>
+  <!--/Navbar-->
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   </body>
 </html>
