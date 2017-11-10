@@ -5,6 +5,8 @@ class FormulaTintasController < ApplicationController
   # GET /formula_tintas.json
   def index
     @formula_tintas = FormulaTinta.all
+    @formula_tintas = FormulaTinta.all
+    
   end
 
   # GET /formula_tintas/1
@@ -16,6 +18,7 @@ class FormulaTintasController < ApplicationController
   def new
     @formula_tinta = FormulaTinta.new
     @base_tinta = BaseTinta.all
+    @formula_tintas = FormulaTinta.all
   end
 
   # GET /formula_tintas/1/edit

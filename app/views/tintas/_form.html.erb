@@ -109,9 +109,10 @@
  
  
   <div class="actions">
-   <a class="waves-effect waves-light btn" id="insertar">insertar</a>
+   <!--a class="waves-effect waves-light btn" id="insertar"--><!--/a-->
     <!--%= select_tag 'producto_id', options_for_select(@producto.collect{ |u| [u.nombre, u.id] })%-->
-    <%= f.link_to_add "Agregar", :formula_tintas, class: 'btn'%>
-    <%= f.submit %>
+    <%= link_to_add_association 'Agregar Formula', f,:formula_tintas,class: 'btn' %>
+    <!--%= f.link_to_add "Agregar", :formula_tintas, class: 'btn'%-->
+    <%= f.submit class: 'btn' %>
   </div>
 <% end %>

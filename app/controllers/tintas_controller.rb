@@ -6,6 +6,7 @@ class TintasController < ApplicationController
   def index
     @tintas = Tinta.all
     @productos = Producto.all
+    @formula_tintas = FormulaTinta.all
   end
 
   # GET /tintas/1
