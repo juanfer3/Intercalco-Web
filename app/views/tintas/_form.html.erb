@@ -12,53 +12,84 @@
   <% end %>
 
   <div class="field">
+    <%= 
+    f.input :cod, 
+    id: :tinta_cod 
+    %>
+  </div>
+
+  <div class="field">
+    <%= 
+    f.association :linea_uv, 
+    label_method: :tipo_de_linea,
+    value_method: :id,
+    as: :select,
+    include_blank: 'Seleccione la Linea del color', 
+    wrapper_html: { class: 'm6 s12' }
+    %>
+  </div>
+  
+  <div class="field">
+    <%= 
+    f.input :pantone, 
+    id: :tinta_pantone 
+    %>
+  </div>
+  
+  <div class="field">
+     <%= 
+     f.association :malla, 
+     label_method: :num_malla,
+     value_method: :id,
+     as: :select,
+     include_blank: 'Mallas',  
+     wrapper_html: { class: 'm6 s12' } 
+     %>
+  </div>
+  
+  <div class="field">
+     <%=
+     f.association :producto, 
+     collection: Producto.all, 
+     label_method: :nombre, 
+     value_method: :id, 
+     as: :select, 
+     include_blank: 'Seleccione Producto'
+     %>
    
-    <%= f.input :cod, id: :tinta_cod %>
   </div>
 
   <div class="field">
-    <%= f.association :linea_uv, include_blank: 'Seleccione la Linea del color', wrapper_html: { class: 'm6 s12' }%>
-  </div>
-  
-  <div class="field">
-    <%= f.input :pantone, id: :tinta_pantone %>
-  </div>
-  <!--%f.simple_fields_for :malla do |malla_f|%-->
-  <div class="field">
-   <%= f.association :malla, include_blank: 'Mallas',  wrapper_html: { class: 'm6 s12' } %>
-  </div>
-  <!--%end%-->
-  <div class="field">
-    <%= f.association :producto, include_blank: 'Producto',  wrapper_html: { class: 'm6 s12' } %>
+    <%= 
+    f.input :tipo_de_unidad, 
+    id: :tinta_tipo_de_unidad 
+    %>
   </div>
 
   <div class="field">
-    <%= f.input :tipo_de_unidad, id: :tinta_tipo_de_unidad %>
+    <%= 
+    f.input :cantida, 
+    id: :tinta_cantida 
+    %>
   </div>
 
-  <div class="field">
-    <%= f.input :cantida, id: :tinta_cantida %>
-  </div>
-  <!--%f.simple_fields_for :formula_tintas do |formulas_f|%>
-    <div class="field">
-      <!%= formulas_f.text_field :descripcion %>
-    </div>
-    
-  <!%end%-->
-  
-  
-  <!--div class="field"-->
-    <!--%= form.label :mezcla_total %-->
-    <!--%= form.text_field :mezcla_total, id: :tinta_mezcla_total %-->
-  <!--/div-->
  <%=f.simple_fields_for :formula_tintas do |formu|%>
    <div>
      <h2>Fomulario para Formulas</h2>
-     <%=formu.input :tinta_id%>
+     
+     
      <label> Descipcion</label>
-     <%=formu.text_area :descripcion%>
-     <%=formu.input :tinta_base%>
-     <%=formu.input :cantidad%>
+     <%=
+     formu.text_area :descripcion
+     %>
+     <!--  -->
+     <%=
+     formu.input :tinta_base
+     %>
+     <!--  -->
+     <%=
+     formu.input :cantidad
+     %>
    </div>
    
  <%end%>
@@ -66,7 +97,8 @@
   
  </div>
   <div class="actions">
-    
+   
+    <!--%= select_tag 'producto_id', options_for_select(@producto.collect{ |u| [u.nombre, u.id] })%-->
     <%= f.submit %>
   </div>
 <% end %>
