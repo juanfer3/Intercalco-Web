@@ -1,37 +1,29 @@
-<%= form_with(model: formula_tinta, local: true) do |form| %>
-  <% if formula_tinta.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(formula_tinta.errors.count, "error") %> prohibited this formula_tinta from being saved:</h2>
+<%= simple_form_for(@formula_tinta) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% formula_tinta.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :tinta_id %>
-    <%= form.text_field :tinta_id, id: :formula_tinta_tinta_id %>
+  <div class="form-inputs">
+    <%= 
+       f.association :tinta,
+       collection: Tinta.all, 
+       label_method: :pantone, 
+       value_method: :id, 
+       as: :select, 
+       include_blank: 'Seleccione Tinta'
+    %>
+    <%=
+       f.association :base_tinta,
+       collection: BaseTinta.all, 
+       label_method: :descripcion_base, 
+       value_method: :id, 
+       as: :select, 
+       include_blank: 'Seleccione Base'
+    %>
+    <%= 
+      f.input :cantidad 
+    %>
   </div>
 
-  <div class="field">
-    <%= form.label :tinta_base %>
-    <%= form.number_field :tinta_base, id: :formula_tinta_tinta_base %>
-  </div>
-
-  <div class="field">
-    <%= form.label :descripcion %>
-    <%= form.text_area :descripcion, id: :formula_tinta_descripcion %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cantidad %>
-    <%= form.text_field :cantidad, id: :formula_tinta_cantidad %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

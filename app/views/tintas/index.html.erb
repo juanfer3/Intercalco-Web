@@ -28,15 +28,17 @@
         <td><%= tinta.tipo_de_unidad %></td>
         <td><%= tinta.cantida %></td>
         <td><%= tinta.mezcla_total %></td>
-        <td><%= link_to 'Show', tinta %></td>
-        <td><%= link_to 'Edit', edit_tinta_path(tinta) %></td>
-        <td><%= link_to 'Destroy', tinta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button class="waves-effect waves-light btn boton_ver"><%= link_to 'Show', tinta ,class:'boton '%></button></td>
+        <td><button class="waves-effect waves-light btn boton_editar" ><%= link_to 'Edit', edit_tinta_path(tinta) ,class:'boton '%></button></td>
+        <td><button class="waves-effect waves-light btn boton_eliminar"><%= link_to 'Destroy', tinta, method: :delete, data: { confirm: 'Are you sure?' },class:'boton ' %></button></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+
+
 
 <div class="fixed-action-btn horizontal">
     <a href="tintas/new"  class="btn-floating btn-large red">

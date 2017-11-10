@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Base Tintas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cod</th>
+      <th>Descripcion base</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @base_tintas.each do |base_tinta| %>
+      <tr>
+        <td><%= base_tinta.cod %></td>
+        <td><%= base_tinta.descripcion_base %></td>
+        <td><button class="waves-effect waves-light btn boton_ver"><%= link_to 'Show', base_tinta ,class:'boton '%></button></td>
+        <td><button class="waves-effect waves-light btn boton_editar" ><%= link_to 'Edit', edit_base_tinta_path(base_tinta),class:'boton ' %></button></td>
+        <td><button class="waves-effect waves-light btn boton_eliminar"><%= link_to 'Destroy', base_tinta, method: :delete, data: { confirm: 'Are you sure?' },class:'boton ' %></button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Base Tinta', new_base_tinta_path %>

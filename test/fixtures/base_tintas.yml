@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tinta: one
-  base_tinta: one
-  cantidad: 1.5
+  cod: MyString
+  descripcion_base: MyText
 
 two:
-  tinta: two
-  base_tinta: two
-  cantidad: 1.5
+  cod: MyString
+  descripcion_base: MyText

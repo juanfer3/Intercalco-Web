@@ -74,31 +74,44 @@
   </div>
 
  <%=f.simple_fields_for :formula_tintas do |formu|%>
-   <div>
+   <div id="formula">
      <h2>Fomulario para Formulas</h2>
      
      
-     <label> Descipcion</label>
-     <%=
-     formu.text_area :descripcion
-     %>
+    
+     
+     
      <!--  -->
-     <%=
-     formu.input :tinta_base
-     %>
+     <div class="field">
+       <%=
+         formu.association :base_tinta,
+         collection: BaseTinta.all, 
+         label_method: :descripcion_base, 
+         value_method: :id, 
+         as: :select, 
+         include_blank: 'Seleccione Base'
+       %>
+     </div>
      <!--  -->
-     <%=
-     formu.input :cantidad
-     %>
+     <div class="field">
+       <%=
+       formu.input :cantidad
+       %>
+     </div>
    </div>
    
  <%end%>
  <div>
   
  </div>
+ 
+ <div id="agregar"></div>
+ 
+ 
   <div class="actions">
-   
+   <a class="waves-effect waves-light btn" id="insertar">insertar</a>
     <!--%= select_tag 'producto_id', options_for_select(@producto.collect{ |u| [u.nombre, u.id] })%-->
+    <%= f.link_to_add "Agregar", :formula_tintas, class: 'btn'%>
     <%= f.submit %>
   </div>
 <% end %>

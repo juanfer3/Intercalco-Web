@@ -19,7 +19,7 @@ class TintasController < ApplicationController
     @tinta.formula_tintas.build
     @producto = Producto.all
     @malla = Malla.all
-  
+    @base_tinta = BaseTinta.all
   end
 
   # GET /tintas/1/edit
@@ -75,6 +75,6 @@ class TintasController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tinta_params
       params.require(:tinta).permit(:cod, :linea_uv_id, :pantone, :malla_id, :producto_id, :tipo_de_unidad, :cantida, :mezcla_total,
-      formula_tintas_attributes:[:id, :tinta_base, :descripcion, :cantidad])
+      formula_tintas_attributes:[:id, :base_tinta_id, :descripcion, :cantidad])
     end
 end

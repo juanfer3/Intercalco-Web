@@ -1,3 +1,6 @@
 class FormulaTinta < ApplicationRecord
-  belongs_to :tinta, inverse_of: :formula_tintas 
+  
+  belongs_to :tinta, optional: true
+  belongs_to :base_tinta
+  
 end

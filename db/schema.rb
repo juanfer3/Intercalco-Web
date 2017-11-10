@@ -10,15 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109132905) do
+ActiveRecord::Schema.define(version: 20171110154706) do
+
+  create_table "base_tintas", force: :cascade do |t|
+    t.string "cod"
+    t.text "descripcion_base"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "formula_tintas", force: :cascade do |t|
     t.integer "tinta_id"
-    t.integer "tinta_base"
-    t.text "descripcion"
+    t.integer "base_tinta_id"
     t.float "cantidad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["base_tinta_id"], name: "index_formula_tintas_on_base_tinta_id"
     t.index ["tinta_id"], name: "index_formula_tintas_on_tinta_id"
   end
 

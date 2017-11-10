@@ -32,5 +32,6 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
    inflect.irregular 'pantone', 'pantones'
    inflect.irregular 'descripcion', 'descripciones'
    inflect.irregular 'mezcla_total', 'mezclas_totales'
-
+   inflect.irregular 'base_tinta', 'base_tintas'
+   
 end

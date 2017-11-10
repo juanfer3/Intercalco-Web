@@ -17,7 +17,7 @@ class FormulaTintasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create formula_tinta" do
     assert_difference('FormulaTinta.count') do
-      post formula_tintas_url, params: { formula_tinta: { cantidad: @formula_tinta.cantidad, descripcion: @formula_tinta.descripcion, tinta_base: @formula_tinta.tinta_base, tinta_id: @formula_tinta.tinta_id } }
+      post formula_tintas_url, params: { formula_tinta: { base_tinta_id: @formula_tinta.base_tinta_id, cantidad: @formula_tinta.cantidad, tinta_id: @formula_tinta.tinta_id } }
     end
 
     assert_redirected_to formula_tinta_url(FormulaTinta.last)
@@ -34,7 +34,7 @@ class FormulaTintasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update formula_tinta" do
-    patch formula_tinta_url(@formula_tinta), params: { formula_tinta: { cantidad: @formula_tinta.cantidad, descripcion: @formula_tinta.descripcion, tinta_base: @formula_tinta.tinta_base, tinta_id: @formula_tinta.tinta_id } }
+    patch formula_tinta_url(@formula_tinta), params: { formula_tinta: { base_tinta_id: @formula_tinta.base_tinta_id, cantidad: @formula_tinta.cantidad, tinta_id: @formula_tinta.tinta_id } }
     assert_redirected_to formula_tinta_url(@formula_tinta)
   end
 
