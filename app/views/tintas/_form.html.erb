@@ -74,7 +74,7 @@
   </div>
 
  <%=f.simple_fields_for :formula_tintas do |formu|%>
-   <div id="formula">
+   <div id="formula"  class="formulas">
      <h2>Fomulario para Formulas</h2>
      
      
@@ -99,6 +99,7 @@
        %>
      </div>
    </div>
+ 
    
  <%end%>
  <div>
@@ -111,7 +112,7 @@
   <div class="actions">
    <!--a class="waves-effect waves-light btn" id="insertar"--><!--/a-->
     <!--%= select_tag 'producto_id', options_for_select(@producto.collect{ |u| [u.nombre, u.id] })%-->
-    <%= link_to_add_association 'Agregar Formula', f,:formula_tintas,class: 'btn' %>
+    <%= link_to_add_association 'Agregar Formula', f , :formula_tintas,class: 'btn'%>
     <!--%= f.link_to_add "Agregar", :formula_tintas, class: 'btn'%-->
     <%= f.submit class: 'btn' %>
   </div>

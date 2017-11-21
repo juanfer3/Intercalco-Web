@@ -71,6 +71,6 @@ class BaseTintasController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def base_tinta_params
       params.require(:base_tinta).permit(:cod, :descripcion_base,
-      formula_tintas_attributes:[:id, :tinta_base, :descripcion, :cantidad])
+      formula_tintas_attributes:[:id, :base_tinta_id, :descripcion, :cantidad])
     end
 end

@@ -12,12 +12,13 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require jquery.turbolinks
 //= require materialize
 //= require materialize-form
 //= require materialize-sprockets
 //= require cocoon
+//= require jquery.turbolinks
 //= require turbolinks
+//= require jquery_nested_form
 //= require_tree .
 
 Materialize.toast('Reload! :)', 4000) // 4000 is the duration of the toast

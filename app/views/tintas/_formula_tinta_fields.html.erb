@@ -1,32 +1,32 @@
-<script scr="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js" ></script>
-<script sct="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>   
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+
 <h3>   
     Formulario Anidado
 </h3> 
 <%= simple_nested_form_for @tinta do |f| %>
 <%=f.simple_fields_for :formula_tintas do |formu|%>
+
     <div class="field">
-       <%=
-         formu.association :base_tinta,
-         collection: BaseTinta.all, 
-         label_method: :descripcion_base, 
-         value_method: :id, 
-         as: :select, 
-         include_blank: 'Seleccione Base'
-       %>
+       <%=formu.select :base_tinta,
+         BaseTinta.all.map{|r|[r.descripcion_base, r.id]},
+         include_blank: 'Seleccione Base'%>
      </div>
+     
      <!--  -->
-     <div class="field">
+     <div class="field s12">
+         
        <%=
        formu.input :cantidad
        %>
+       
      </div>
+  
      <div class="field">
        <%=
-       link_to_remove_association "Eliminar Formula", f
+       link_to_remove_association "Eliminar Formula", formu
        %>
      </div>
    </div>
    <%end%>
+  
 <%end%>

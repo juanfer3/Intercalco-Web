@@ -55,10 +55,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # materialize
 gem 'materialize-sass'
-# jquery
-gem 'jquery-rails'
 # jquery turbolinkd
 gem 'jquery-turbolinks'
+# jquery
+gem 'jquery-rails'
+
 # Icons Materialize
 gem 'material_icons'
 
